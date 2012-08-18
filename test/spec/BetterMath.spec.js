@@ -18,14 +18,6 @@ describe('BetterMath',function(){
 			expect( bm.add( 0.1  , 0.1 ) ).toEqual( 0 );
 			expect( bm.add( .4, .4 ) ).not.toEqual( .8 );
 		});
-		
-		it('should increment the counter',function(){
-			expect( bm.getCount() ).toEqual( 0 );
-			bm.add( 1 , 1 );
-			expect( bm.getCount() ).toEqual( 1 );
-			bm.add( 1 , 1 );
-			expect( bm.getCount() ).toEqual( 2 );
-		});
 
 	});
 
@@ -42,14 +34,15 @@ describe('BetterMath',function(){
 			expect( bm.multiply( -2 , -2 ) ).toBeGreaterThan( 0 );
 		});
 
+	});
+
+	describe('incrementCounter',function(){
+		
 		it('should increment the counter',function(){
 			expect( bm.getCount() ).toEqual( 0 );
-			bm.add( 1 , 1 );
-			expect( bm.getCount() ).toEqual( 1 );
-			bm.add( 1 , 1 );
-			expect( bm.getCount() ).toEqual( 2 );
+			bm.incrementCounter();
 		});
 
-	});
+	})
 
 });

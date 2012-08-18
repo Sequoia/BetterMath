@@ -6,7 +6,7 @@ BetterMath.prototype.counter = 0;
 
 BetterMath.prototype.add = function( numberA, numberB ){
 	var result = this.sum( numberA, numberB );
-	this.counter++;
+	this.incrementCounter();
 	return result;
 }
 
@@ -19,10 +19,17 @@ BetterMath.prototype.sum = function( a, b ){
 BetterMath.prototype.multiply = function( a, b ){
 	var result = a * b;
 	result = Math.abs(result);
-	this.counter++;
+	this.incrementCounter();
 	return result;
 }
 
 BetterMath.prototype.getCount = function(){
 	return this.counter;
 }
+
+BetterMath.prototype.incrementCounter = function(){
+	this.counter++;
+	//other counter operations...
+	//...
+	//...
+};
