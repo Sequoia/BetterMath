@@ -1,5 +1,5 @@
 //relies on jQuery
-function BetterMath(){
+var BetterMath = function BetterMath(){
 }
 
 BetterMath.prototype.counter = 0;
@@ -33,3 +33,5 @@ BetterMath.prototype.incrementCounter = function(){
 	//...
 	//...
 };
+
+this.BetterMath = BetterMath;

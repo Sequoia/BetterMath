@@ -1,3 +1,7 @@
+if(typeof require === "function"){
+	var BetterMath = require('../../BetterMath.js').BetterMath;
+}
+
 describe('BetterMath',function(){
 
 	var bm; //BetterMath object
