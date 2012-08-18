@@ -27,15 +27,11 @@ describe('BetterMath',function(){
 			expect( bm.multiply( 10 , 10 ) ).toEqual( 100 );
 		});
 
-		it('should produce a negative result if one operand is negative',function(){
+		it('should always return a positive result',function(){
 			var bm = new BetterMath();
 
-			expect( bm.multiply( -2 , 2 ) ).toBeLessThan( 0 );
-		});
-
-		it('should produce a positive result if both operands are negative',function(){
-			var bm = new BetterMath();
-
+			expect( bm.multiply( 2 , 2 ) ).toBeGreaterThan( 0 );
+			expect( bm.multiply( -2 , 2 ) ).toBeGreaterThan( 0 );
 			expect( bm.multiply( -2 , -2 ) ).toBeGreaterThan( 0 );
 		});
 

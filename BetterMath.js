@@ -15,5 +15,6 @@ BetterMath.prototype.sum = function( a, b ){
 
 BetterMath.prototype.multiply = function( a, b ){
 	var result = a * b;
+	result = Math.abs(result);
 	return result;
 }
