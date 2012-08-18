@@ -14,7 +14,8 @@
 		<input name="operand2" id="operand2" type="text" />
 	</form>
 	<br>
-	<button id="add">Add</button><br>
+	<button id="add">Add</button>&nbsp;
+	<button id="multiply">Multiply</button><br>
 	<br>
 	Result: <span id="result"></span>
 
@@ -46,6 +47,17 @@
 				//write to page
 				$("#result").text(result);
 			});
+
+			//link multiply button to bettermath multiply
+			$("#multiply").click(function(event){
+				//get values
+				getValues();
+				//get result
+				var result = bm.multiply( num1, num2 );
+				//write to page
+				$("#result").text(result);
+			});
+						
 		});
 
 </script>
