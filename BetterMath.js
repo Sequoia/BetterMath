@@ -12,3 +12,8 @@ BetterMath.prototype.sum = function( a, b ){
 	product = Math.round( product ); //Downstream service needs numbers rounded
 	return product;
 }
+
+BetterMath.prototype.multiply = function( a, b ){
+	var result = a * b;
+	return result;
+}
