@@ -19,6 +19,11 @@ describe('BetterMath',function(){
 			expect( bm.add( .4, .4 ) ).not.toEqual( .8 );
 		});
 
+		it('should call incrementCounter', function(){
+			spyOn(bm,"incrementCounter");
+			bm.add( 1 , 1);
+			expect(bm.incrementCounter).toHaveBeenCalled();
+		});
 	});
 
 	describe('multiply',function(){
@@ -34,6 +39,12 @@ describe('BetterMath',function(){
 			expect( bm.multiply( -2 , -2 ) ).toBeGreaterThan( 0 );
 		});
 
+		it('should call incrementCounter', function(){
+			spyOn(bm,"incrementCounter");
+			bm.multiply( 1 , 1);
+			expect(bm.incrementCounter).toHaveBeenCalled();
+		});
+
 	});
 
 	describe('incrementCounter',function(){
@@ -43,6 +54,9 @@ describe('BetterMath',function(){
 			bm.incrementCounter();
 		});
 
+		it('should perform other operations',function(){
+			//...
+		});
 	})
 
 });
