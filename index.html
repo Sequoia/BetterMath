@@ -18,6 +18,8 @@
 	<button id="multiply">Multiply</button><br>
 	<br>
 	Result: <span id="result"></span>
+	<br>
+	You have performed <span id="counter">0</span> operations!
 
 	<!-- include dependencies -->
 	<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
@@ -44,8 +46,7 @@
 				getValues();
 				//get result
 				var result = bm.add( num1, num2 );
-				//write to page
-				$("#result").text(result);
+				updatePage(result);
 			});
 
 			//link multiply button to bettermath multiply
@@ -54,9 +55,15 @@
 				getValues();
 				//get result
 				var result = bm.multiply( num1, num2 );
+				updatePage(result);
+			});
+
+			function updatePage(result){
 				//write to page
 				$("#result").text(result);
-			});
+				//update count
+				$("#counter").text(bm.getCount());
+			};
 						
 		});
 
