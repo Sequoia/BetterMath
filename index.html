@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BetterMath Calculator</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+	<form>
+		<label for="operand1">Number 1:</label>
+		<input name="operand1" id="operand1" type="text" />
+		<br>
+		<label for="operand2">Number 2:</label>
+		<input name="operand2" id="operand2" type="text" />
+	</form>
+	<br>
+	<button id="add">Add</button><br>
+	<br>
+	Result: <span id="result"></span>
+
+	<!-- include dependencies -->
+	<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
+	<!-- include bettermath module -->
+	<script type="text/javascript" src="BetterMath.js"></script>
+	<!-- link module to page markup-->
+	<script type="text/javascript">
+		//store current numbers
+		var num1;
+		var num2;
+		//gets values from input boxes and makes them numbers
+		function getValues(){
+			num1 = parseFloat( $("#operand1").val() );
+			num2 = parseFloat( $("#operand2").val() );
+		}
+
+		$(document).ready(function(){
+			//get bettermath module
+			bm = new BetterMath();
+
+			//link add button to bettermath add
+			$("#add").click(function(event){
+				//get values
+				getValues();
+				//get result
+				var result = bm.add( num1, num2 );
+				//write to page
+				$("#result").text(result);
+			});
+		});
+
+</script>
+</body>
+</html>
