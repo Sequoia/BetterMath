@@ -14,7 +14,7 @@ describe('BetterMath',function(){
 
 			expect( bm.add( 1.3 , 2.3 ) ).toEqual( 4 );
 			expect( bm.add( 0.1  , 0.1 ) ).toEqual( 0 );
-			expect( bm.add( .4, .4 ).not.toEqual(.8);
+			expect( bm.add( .4, .4 ) ).not.toEqual( .8 );
 
 		});
 	});
